@@ -1,0 +1,25 @@
+$susy: (
+  columns: 12,
+  gutters: 1/3,
+  use-custom: (
+    box-sizing: false
+  ),
+  global-box-sizing: border-box,
+  debug: (image: show)
+);
+.main{
+  @include container;
+
+}
+.news{
+  //@include push(1.25);
+
+  width: columns(12);
+  margin: 0 auto;
+}
+.card{
+  //@include push(1);
+  @include span(5 of 12);
+  //@include gallery(5 of 12);
+  margin-bottom: gutter();
+}
