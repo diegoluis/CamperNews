@@ -223,9 +223,33 @@ h2 {
 
 .card {
   height: 18rem;
-  border-bottom: 1px solid #DEDBDB;
-  border-right: 1px solid #DEDBDB; }
+  border-right: 1px solid #DEDBDB;
+  position: relative; }
 
+.card::after {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  left: -20px;
+  right: -20px;
+  bottom: -10px;
+  border-bottom: 1px solid #DEDBDB; }
+
+.card:nth-child(2n) {
+  border-right: none; }
+
+/*
+.borders:before {
+  content: " ";
+  position: absolute;
+  z-index: -1;
+  top: 5px;
+  left: 5px;
+  right: 5px;
+  bottom: 5px;
+  border: 5px solid #ffea00;
+}
+*/
 .artImage {
   width: 40.42553%;
   float: left;
