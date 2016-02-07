@@ -57,6 +57,7 @@ header{
 // ======================================
 .card{
 	height: 18rem;
+	padding-right: 10px;
 	border-right: 1px solid $gray;
 	position: relative;
 }
@@ -77,19 +78,6 @@ header{
 	border-right: none;
 }
 
-/*
-.borders:before {
-  content: " ";
-  position: absolute;
-  z-index: -1;
-  top: 5px;
-  left: 5px;
-  right: 5px;
-  bottom: 5px;
-  border: 5px solid #ffea00;
-}
-*/
-
 // Main image
 // ======================================
 .artImage{
@@ -108,6 +96,16 @@ header{
 		position: relative;
 		margin: auto;
 	}
+}
+.grayBg{
+	background-color: $darkGray;
+	display: flex;
+	align-items: center;
+	align-content: center;
+}
+.imgReplace{
+	min-width: 80%;
+	height: auto;
 }
 // Title of the Card
 // ======================================

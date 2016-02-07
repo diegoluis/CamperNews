@@ -19,6 +19,8 @@ $(document).ready(function() { 
           var image = json[i].image;
           var authorPic = json[i].author.picture;
           var authorName = json[i].author.username;
+          //image replacement in case there is no image
+          var imgReplace = "http://diegoluis.net/imageRep/camperNews/freeCodeSymbol.svg";
           //------Create a div that holds the bottom line----//
           //var bottomLine = document.createElement("div");
           //-----Create the card container--------------//
@@ -32,8 +34,14 @@ $(document).ready(function() { 
           //-----------Create article image--------------//
           var img = document.createElement("img");
           img.src = image;
+          //If image is empty
           var imgDiv = document.createElement("div");
           imgDiv.className = "artImage";
+          if(image ===""){
+            img.src = imgReplace;
+            img.className = "imgReplace";
+            imgDiv.className += " grayBg";
+          }
           imgDiv.appendChild(img);
           //create the link
           var linkImage = document.createElement("a");
@@ -41,6 +49,7 @@ $(document).ready(function() { 
           linkImage.target = "_blank";
           linkImage.appendChild(imgDiv);
           card.appendChild(linkImage);
+
           //--------Create title------------------------//
           //create div
           var headHtml = document.createElement("div");
