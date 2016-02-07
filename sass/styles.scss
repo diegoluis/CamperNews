@@ -25,18 +25,29 @@ body{
 	font-family: 'Catamaran', serif;
 	font-weight: 100;
 }
-h1{
-	font-family: 'Play', sans-serif;
-}
-h2{
+
+h1, h2{
 	font-family: 'Play', sans-serif;
 	margin: 0;
 }
 
 // ======================================
-// all the news
+// HEADER
 // ======================================
-
+header{
+	border-bottom: 1px solid $gray;
+	margin-bottom: 5%;
+	display: flex;
+	padding-bottom: .5rem;
+	padding-top: .5rem;
+	h1{
+		margin-left: 1%;
+		color: $darkGray;
+	}
+	#freeCodeSymbol{
+		fill: $darkGray;
+	}
+}
 
 // ======================================
 // Card
