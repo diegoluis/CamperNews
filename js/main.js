@@ -12,13 +12,15 @@ $(document).ready(function() { 
           //convert to string
           t = t.toString();
           //cut out the hours and left only day, month and year
-          var newT = t.substring(0,t.length-23);
+          var newT = t.substring(4,t.length-23);
           var link = json[i].link;
           var metaDescription = json[i].metaDescription;
           var rank = json[i].rank;
           var image = json[i].image;
           var authorPic = json[i].author.picture;
           var authorName = json[i].author.username;
+          //------Create a div that holds the bottom line----//
+          //var bottomLine = document.createElement("div");
           //-----Create the card container--------------//
           var card = document.createElement("div");
           card.className = "card";
@@ -87,13 +89,21 @@ $(document).ready(function() { 
 
           //-------------date
           var dateHtml = document.createElement("div");
-          var dateText = document.createTextNode("Posted on: " + newT);
+          dateHtml.className = "date";
+          var dateText = document.createTextNode("Posted: " + newT);
           dateHtml.appendChild(dateText);
           footCard.appendChild(dateHtml);
-          //votes
+          //-------------votes
+          //-----heart
+          var heart = document.createElement("img");
+          heart.className = "heart";
+          heart.src = "http://diegoluis.net/imageRep/camperNews/heart.svg";
+          //----votes
           var votesHtml = document.createElement("div");
           var votesText = document.createTextNode(rank);
           votesHtml.className = "votes";
+          //appent heart
+          votesHtml.appendChild(heart);
           votesHtml.appendChild(votesText);
           footCard.appendChild(votesHtml);
         }

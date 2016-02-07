@@ -1,3 +1,7 @@
+/*
+http://diegoluis.net/imageRep/camperNews/freecodecamp_logo.svg
+http://diegoluis.net/imageRep/camperNews/heart.svg
+*/
 article,
 aside,
 details,
@@ -206,6 +210,7 @@ html {
 
 body {
   font-size: 1rem;
+  line-height: 1.4;
   font-family: 'Catamaran', serif;
   font-weight: 100; }
 
@@ -244,12 +249,14 @@ h2 {
   .headLine h2 {
     margin: 0;
     color: #000;
+    overflow: hidden;
     text-overflow: ellipsis; }
 
 .description {
-  height: 9rem;
+  height: 8.4rem;
   overflow: hidden;
-  color: #333333; }
+  color: #333333;
+  padding-right: 2%; }
 
 .footCard {
   display: -webkit-box;
@@ -270,7 +277,10 @@ h2 {
   height: 3rem;
   font-size: .7rem;
   color: #333333;
-  margin-right: 3%; }
+  margin-right: 3%;
+  border-top: 1px solid #DEDBDB;
+  padding-top: 1%;
+  margin-top: 1%; }
   .footCard .authorPic {
     width: 50%;
     height: auto;
@@ -292,5 +302,11 @@ h2 {
     -webkit-justify-content: flex-start;
         -ms-flex-pack: start;
             justify-content: flex-start; }
+  .footCard .date {
+    padding-left: 1%; }
+  .footCard .votes {
+    font-size: 1.2rem; }
+  .footCard .heart {
+    padding-right: 10%; }
 
 /*# sourceMappingURL=styles.css.map */

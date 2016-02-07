@@ -21,6 +21,7 @@ html{
 }
 body{
 	font-size: 1rem;
+	line-height: $line-height;
 	font-family: 'Catamaran', serif;
 	font-weight: 100;
 }
@@ -42,7 +43,6 @@ h2{
 // ======================================
 .card{
 	height: 18rem;
-	//border: 1px solid black;
 	border-bottom: 1px solid $gray;
 	border-right: 1px solid $gray;
 }
@@ -74,6 +74,7 @@ h2{
 	h2{
 		margin: 0;
 		color: $black;
+		overflow: hidden;
 		text-overflow: ellipsis;
 	}
 	margin-bottom: 3%;
@@ -82,9 +83,10 @@ h2{
 // Text of card
 // ======================================
 .description{
-	height: 9rem;
+	height: $line-height * 6rem;
 	overflow: hidden;
 	color: $darkGray;
+	padding-right: 2%;
 }
 // footer of card
 // ======================================
@@ -97,6 +99,9 @@ h2{
 	font-size: .7rem;
 	color:$darkGray;
 	margin-right: 3%;
+	border-top: 1px solid $gray;
+	padding-top: 1%;
+	margin-top: 1%;
 	.authorPic{
 		width: 50%;
 		height: auto;
@@ -108,5 +113,15 @@ h2{
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
+	}
+	.date{
+		padding-left: 1%;
+	}
+	//---votes
+	.votes{
+		font-size: 1.2rem;
+	}
+	.heart{
+		padding-right: 10%;
 	}
 }
