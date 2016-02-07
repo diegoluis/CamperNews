@@ -44,6 +44,9 @@ header{
 		margin-left: 1%;
 		color: $darkGray;
 	}
+	.logo{
+		margin-left: 1%;
+	}
 	#freeCodeSymbol{
 		fill: $darkGray;
 	}
@@ -154,12 +157,10 @@ header{
 		align-items: center;
 		justify-content: flex-start;
 	}
-	.date{
-		padding-left: 1%;
-	}
 	//---votes
 	.votes{
 		font-size: 1.2rem;
+		display: flex;
 	}
 	.heart{
 		padding-right: 10%;
