@@ -42,7 +42,7 @@ $(document).ready(function() { 
           //--------Create title------------------------//
           //create div
           var headHtml = document.createElement("div");
-          headHtml.className = 'headline';
+          headHtml.className = 'headLine';
           //create an h2
           var headH2 = document.createElement("h2");
           //add the text to the div
@@ -84,21 +84,18 @@ $(document).ready(function() { 
           author.appendChild(authorNameHtml);
 
           //-----------Votes and Dates-------------------//
-          // //container for both
-          // var votesAndDates = document.createElement("div");
-          // votesAndDates.className= "votesAndDates";
-          // card.appendChild(votesAndDates);
+
+          //-------------date
+          var dateHtml = document.createElement("div");
+          var dateText = document.createTextNode("Posted on: " + newT);
+          dateHtml.appendChild(dateText);
+          footCard.appendChild(dateHtml);
           //votes
           var votesHtml = document.createElement("div");
           var votesText = document.createTextNode(rank);
           votesHtml.className = "votes";
           votesHtml.appendChild(votesText);
           footCard.appendChild(votesHtml);
-          //-------------date
-          var dateHtml = document.createElement("div");
-          var dateText = document.createTextNode("Posted on: " + newT);
-          dateHtml.appendChild(dateText);
-          footCard.appendChild(dateHtml);
         }
     }
     readJson(json);

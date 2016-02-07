@@ -5,7 +5,7 @@ $susy: (
     box-sizing: false
   ),
   global-box-sizing: border-box,
-  debug: (image: show)
+  //debug: (image: show)
 );
 .main{
   @include container;

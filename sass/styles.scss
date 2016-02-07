@@ -42,7 +42,9 @@ h2{
 // ======================================
 .card{
 	height: 18rem;
-	border: 1px solid black;
+	//border: 1px solid black;
+	border-bottom: 1px solid $gray;
+	border-right: 1px solid $gray;
 }
 
 // Main image
@@ -61,30 +63,50 @@ h2{
 		max-height: 100%;
 		width: auto;
 		position: relative;
-    left: -50%;
 		margin: auto;
 	}
 }
 // Title of the Card
 // ======================================
 .headLine{
-	height: 6rem;
+	height: 5rem;
+	overflow: hidden;
 	h2{
 		margin: 0;
+		color: $black;
+		text-overflow: ellipsis;
 	}
+	margin-bottom: 3%;
+
 }
 // Text of card
 // ======================================
 .description{
 	height: 9rem;
+	overflow: hidden;
+	color: $darkGray;
 }
 // footer of card
 // ======================================
 .footCard{
 	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	align-content: center;
 	height: 3rem;
+	font-size: .7rem;
+	color:$darkGray;
+	margin-right: 3%;
 	.authorPic{
-		width: 10%;
+		width: 50%;
 		height: auto;
+		border-radius: 50%;
+		margin-right: 7%;
+	}
+	.author{
+		@include span(3);
+		display: flex;
+		align-items: center;
+		justify-content: flex-start;
 	}
 }
