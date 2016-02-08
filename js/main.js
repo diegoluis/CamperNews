@@ -1,4 +1,9 @@
 $(document).ready(function() { 
+  // preloader
+  $(window).load(function(){
+    $('.preloader').delay(400).fadeOut(500);
+  });
+
   //$.getJSON("js/offline.json", function(json) {
   $.getJSON("http://www.freecodecamp.com/news/hot", function(json) {
     function readJson(json) {
