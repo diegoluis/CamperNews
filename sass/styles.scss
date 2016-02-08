@@ -42,13 +42,23 @@ header{
 	padding-top: .5rem;
 	h1{
 		margin-left: 1%;
-		color: $darkGray;
+		color: $brightCol;
 	}
 	.logo{
 		margin-left: 1%;
 	}
 	#freeCodeSymbol{
-		fill: $darkGray;
+		fill: $brightCol;
+	}
+}
+
+.news{
+	@media only screen and(max-width: $br-small){
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		margin-left: 5%;
 	}
 }
 
@@ -60,6 +70,19 @@ header{
 	padding-right: 20px;
 	border-right: 1px solid $gray;
 	position: relative;
+	margin-bottom: gutter();
+  @media only screen and(max-width: $br-medium){
+    width: 47.5%;
+  }
+  @media only screen and(max-width:$br-smallMed) {
+    @include span(12 of 12);
+    border-right: none;
+		margin-bottom: 2rem;
+		padding-right: 0;
+  }
+	@media only screen and(max-width:$br-small) {
+		height: auto;
+	}
 }
 //put bottom border with pseudo element
 .card::after{
@@ -71,6 +94,9 @@ header{
   right: -20px;
   bottom:-14px;
   border-bottom: 1px solid $gray;
+	@media only screen and(max-width: $br-small){
+		border-bottom: 2px solid $gray;
+	}
 }
 
 //remove right border from last card
@@ -96,6 +122,17 @@ header{
 		position: relative;
 		margin: auto;
 	}
+	@media only screen and(max-width: $br-small){
+		width: 100%;
+		display: inline-block;
+		float: none;
+	}
+	@media only screen and(max-width: $br-small) {
+		img{
+			height: auto;
+			max-width: 100%;
+		}
+	}
 }
 .grayBg{
 	background-color: $darkGray;
@@ -114,12 +151,15 @@ header{
 	overflow: hidden;
 	h2{
 		margin: 0;
-		color: $black;
+		color: $brightCol;
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
+	border-bottom: 1px solid $gray;
 	margin-bottom: 3%;
-
+	@media only screen and(max-width: $br-small) {
+		margin-top: 3%;
+	}
 }
 // Text of card
 // ======================================
@@ -128,6 +168,9 @@ header{
 	overflow: hidden;
 	color: $darkGray;
 	padding-right: 2%;
+	@media only screen and(max-width: $br-smallMed){
+		font-size: 1.2rem;
+	}
 }
 // footer of card
 // ======================================
@@ -143,11 +186,22 @@ header{
 	border-top: 1px solid $gray;
 	padding-top: 1%;
 	margin-top: 1%;
+	@media only screen and(max-width: $br-smallMed){
+		padding-top: 2%;
+	}
+	@media only screen and(max-width: $br-small) {
+		padding-top: 4%;
+	}
 	.author{
 		@include span(3);
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
+		color: $brightCol;
+		@media only screen and(max-width: $br-medSmall){
+			display: inline-block;
+			text-align: center;
+		}
 	}
 	.authorPic{
 		width: 50%;
@@ -157,11 +211,18 @@ header{
 		border-radius: 50%;
 		margin-right: 7%;
 	}
+	//---date
+	.date{
+		overflow: hidden;
+		text-overflow: ellipsis;
+		width: 14ch;
+	}
 
 	//---votes
 	.votes{
 		font-size: 1.2rem;
 		display: flex;
+		color: $brightCol;
 	}
 	.heart{
 		padding-right: 10%;

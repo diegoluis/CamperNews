@@ -16,10 +16,11 @@ $susy: (
 .news{
   margin: 0 auto;
   margin-left: span(2);
+  @media only screen and(max-width: $br-medium){
+    margin: 0 auto;
+  }
 }
 .card{
   //@include push(1);
   @include span(5 of 12);
-  //@include gallery(5 of 12);
-  margin-bottom: gutter();
 }
