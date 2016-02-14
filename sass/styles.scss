@@ -8,7 +8,7 @@
 @import "partials/variables";
 @import "partials/normalize";
 @import "partials/susySettings";
-
+@import "partials/preloader";
 //font-family: 'Catamaran', sans-serif;
 //font-family: 'Play', sans-serif;
 
@@ -25,26 +25,83 @@ body{
 	font-family: 'Catamaran', serif;
 	font-weight: 100;
 }
-h1{
-	font-family: 'Play', sans-serif;
-}
-h2{
+
+h1, h2{
 	font-family: 'Play', sans-serif;
 	margin: 0;
 }
 
 // ======================================
-// all the news
+// HEADER
 // ======================================
+header{
+	border-bottom: 1px solid $gray;
+	margin-bottom: 5%;
+	display: flex;
+	padding-bottom: .5rem;
+	padding-top: .5rem;
+	h1{
+		margin-left: 1%;
+		color: $brightCol;
+	}
+	.logo{
+		margin-left: 1%;
+	}
+	#freeCodeSymbol{
+		fill: $brightCol;
+	}
+}
 
+.news{
+	@media only screen and(max-width: $br-small){
+		margin: 0 auto;
+		display: flex;
+		justify-content: center;
+		flex-direction: column;
+		margin-left: 5%;
+	}
+}
 
 // ======================================
 // Card
 // ======================================
 .card{
 	height: 18rem;
-	border-bottom: 1px solid $gray;
+	padding-right: 20px;
 	border-right: 1px solid $gray;
+	position: relative;
+	margin-bottom: gutter();
+  @media only screen and(max-width: $br-medium){
+    width: 47.5%;
+  }
+  @media only screen and(max-width:$br-smallMed) {
+    @include span(12 of 12);
+    border-right: none;
+		margin-bottom: 2rem;
+		padding-right: 0;
+  }
+	@media only screen and(max-width:$br-small) {
+		height: auto;
+	}
+}
+//put bottom border with pseudo element
+.card::after{
+	content: " ";
+  position: absolute;
+  z-index: -1;
+  //top: -10px;
+  left: -20px;
+  right: -20px;
+  bottom:-14px;
+  border-bottom: 1px solid $gray;
+	@media only screen and(max-width: $br-small){
+		border-bottom: 2px solid $gray;
+	}
+}
+
+//remove right border from last card
+.card:nth-child(2n){
+	border-right: none;
 }
 
 // Main image
@@ -65,6 +122,27 @@ h2{
 		position: relative;
 		margin: auto;
 	}
+	@media only screen and(max-width: $br-small){
+		width: 100%;
+		display: inline-block;
+		float: none;
+	}
+	@media only screen and(max-width: $br-small) {
+		img{
+			height: auto;
+			max-width: 100%;
+		}
+	}
+}
+.grayBg{
+	background-color: $darkGray;
+	display: flex;
+	align-items: center;
+	align-content: center;
+}
+.imgReplace{
+	min-width: 80%;
+	height: auto;
 }
 // Title of the Card
 // ======================================
@@ -73,12 +151,15 @@ h2{
 	overflow: hidden;
 	h2{
 		margin: 0;
-		color: $black;
+		color: $brightCol;
 		overflow: hidden;
 		text-overflow: ellipsis;
 	}
+	border-bottom: 1px solid $gray;
 	margin-bottom: 3%;
-
+	@media only screen and(max-width: $br-small) {
+		margin-top: 3%;
+	}
 }
 // Text of card
 // ======================================
@@ -87,6 +168,9 @@ h2{
 	overflow: hidden;
 	color: $darkGray;
 	padding-right: 2%;
+	@media only screen and(max-width: $br-smallMed){
+		font-size: 1.2rem;
+	}
 }
 // footer of card
 // ======================================
@@ -102,24 +186,43 @@ h2{
 	border-top: 1px solid $gray;
 	padding-top: 1%;
 	margin-top: 1%;
-	.authorPic{
-		width: 50%;
-		height: auto;
-		border-radius: 50%;
-		margin-right: 7%;
+	@media only screen and(max-width: $br-smallMed){
+		padding-top: 2%;
+	}
+	@media only screen and(max-width: $br-small) {
+		padding-top: 4%;
 	}
 	.author{
 		@include span(3);
 		display: flex;
 		align-items: center;
 		justify-content: flex-start;
+		color: $brightCol;
+		@media only screen and(max-width: $br-medSmall){
+			display: inline-block;
+			text-align: center;
+		}
 	}
+	.authorPic{
+		width: 50%;
+		max-width: 50%;
+		min-width: 50%;
+		height: auto;
+		border-radius: 50%;
+		margin-right: 7%;
+	}
+	//---date
 	.date{
-		padding-left: 1%;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		width: 14ch;
 	}
+
 	//---votes
 	.votes{
 		font-size: 1.2rem;
+		display: flex;
+		color: $brightCol;
 	}
 	.heart{
 		padding-right: 10%;

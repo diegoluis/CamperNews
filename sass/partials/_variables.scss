@@ -2,9 +2,11 @@ $gray: #DEDBDB;
 $darkGray: #333333;
 $lightGray: #A2A2A2;
 $black: #000;
+$brightCol: #1E8598;
 $line-height: 1.4;
 
-/*
-http://diegoluis.net/imageRep/camperNews/freecodecamp_logo.svg
-http://diegoluis.net/imageRep/camperNews/heart.svg
-*/
+//---BREAKPOINTS-----
+$br-medium: 1300px;
+$br-medSmall: 1024px;
+$br-smallMed: 600px;
+$br-small: 375px;

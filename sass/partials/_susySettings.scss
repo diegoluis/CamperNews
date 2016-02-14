@@ -5,21 +5,22 @@ $susy: (
     box-sizing: false
   ),
   global-box-sizing: border-box,
+  container-position: center,
   //debug: (image: show)
 );
 .main{
   @include container;
+  margin: 0 auto;
 
 }
 .news{
-  //@include push(1.25);
-
-  width: columns(12);
   margin: 0 auto;
+  margin-left: span(2);
+  @media only screen and(max-width: $br-medium){
+    margin: 0 auto;
+  }
 }
 .card{
   //@include push(1);
   @include span(5 of 12);
-  //@include gallery(5 of 12);
-  margin-bottom: gutter();
 }
